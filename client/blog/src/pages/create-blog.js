@@ -40,7 +40,7 @@ export const CreateBlog = () => {
     event.preventDefault();
     try {
       await axios.post(
-        "http://localhost:1000/blog",
+        "https://mukul-assignment.netlify.app/blog",
         { ...blog },
         {
           headers: { authorization: cookies.access_token },

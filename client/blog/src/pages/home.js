@@ -11,7 +11,7 @@ export const Home = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get("http://localhost:1000/blog");
+        const response = await axios.get("https://mukul-assignment.netlify.app/blog");
         setBlogs(response.data);
       } catch (err) {
         console.log(err);
@@ -21,7 +21,7 @@ export const Home = () => {
     const fetchsavedBlogs = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:1000/blog/savedBlogs/ids/${userID}`
+          `https://mukul-assignment.netlify.app/blog/savedBlogs/ids/${userID}`
         );
         setsavedBlogs(response.data.savedblogs);
       } catch (err) {
@@ -35,7 +35,7 @@ export const Home = () => {
 
   const saveblog = async (blogID) => {
     try {
-      const response = await axios.put("http://localhost:1000/blog", {
+      const response = await axios.put("https://mukul-assignment.netlify.app/blog", {
         blogID,
         userID,
       });
