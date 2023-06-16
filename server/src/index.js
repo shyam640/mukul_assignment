@@ -11,9 +11,7 @@ app.use(cors());
 
 app.use("/auth",userRouter);
 app.use("/blog",blogRouter);
-app.use(express.static(path.join(__dirname, '../client/blog/build')));
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/blog/build/index.html'));
 });
 
 
