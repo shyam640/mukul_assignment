@@ -10,7 +10,7 @@ export const SavedBlog = () => {
     const fetchSavedBlog = async () => {
       try {
         const response = await axios.get(
-          `https://mukul-assignment.netlify.app/savedBlog/${userID}`
+          `/savedBlog/${userID}`
         );
         setSavedBlog(response.data.savedBlog);
       } catch (err) {

@@ -24,7 +24,7 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const result = await axios.post("https://mukul-assignment.netlify.app/auth/login", {
+      const result = await axios.post("/auth/login", {
         username,
         password,
       });
@@ -75,7 +75,7 @@ const Register = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("https://mukul-assignment.netlify.app/auth/register", {
+      await axios.post("/auth/register", {
         username,
         password,
       });
