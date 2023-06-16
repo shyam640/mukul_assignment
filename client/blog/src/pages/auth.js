@@ -12,6 +12,8 @@ export const Auth = () => {
   );
 };
 
+const baseURL = "http://localhost:1000" || window.location.protocol + '//' + window.location.host;
+
 const Login = () => {
   const [_, setCookies] = useCookies(["access_token"]);
 
@@ -24,7 +26,7 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const result = await axios.post("/auth/login", {
+      const result = await axios.post(baseURL+"/auth/login", {
         username,
         password,
       });
@@ -75,7 +77,7 @@ const Register = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("/auth/register", {
+      await axios.post(baseURL+"/auth/register", {
         username,
         password,
       });

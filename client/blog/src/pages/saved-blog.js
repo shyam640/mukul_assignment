@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useGetUserID } from "../hooks/useGetUserID";
 import axios from "axios";
 
+const baseURL = "http://localhost:1000" || window.location.protocol + '//' + window.location.host;
+
 export const SavedBlog = () => {
   const [savedBlog, setSavedBlog] = useState([]);
   const userID = useGetUserID();
@@ -10,7 +12,7 @@ export const SavedBlog = () => {
     const fetchSavedBlog = async () => {
       try {
         const response = await axios.get(
-          `/savedBlog/${userID}`
+          baseURL+`/savedBlog/${userID}`
         );
         setSavedBlog(response.data.savedBlog);
       } catch (err) {

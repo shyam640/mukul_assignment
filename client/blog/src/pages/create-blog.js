@@ -4,6 +4,8 @@ import { useGetUserID } from "../hooks/useGetUserID";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
+const baseURL = "http://localhost:1000" || window.location.protocol + '//' + window.location.host;
+
 export const CreateBlog = () => {
   const userID = useGetUserID();
   const [cookies, _] = useCookies(["access_token"]);
@@ -40,7 +42,7 @@ export const CreateBlog = () => {
     event.preventDefault();
     try {
       await axios.post(
-        "/blog",
+        baseURL+"/blog",
         { ...blog },
         {
           headers: { authorization: cookies.access_token },
